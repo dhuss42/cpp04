@@ -3,7 +3,9 @@ FLAGS = -Wall -Werror -Wextra
 CPPFILES = main.cpp\
 	Animal.cpp\
 	Dog.cpp\
-	Cat.cpp
+	Cat.cpp\
+	WrongAnimal.cpp\
+	WrongCat.cpp
 OFILES = $(CPPFILES:.cpp=.o)
 NAME = Polymorphism
 

@@ -9,7 +9,7 @@ Animal::Animal()
 
 Animal::Animal(const Animal& src) : type(src.type)
 {
-    std::cout << "an Animal object was created with copy constructor\n" << std::endl;
+    std::cout << "an Animal object was created with copy constructor" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& other)
@@ -21,7 +21,7 @@ Animal& Animal::operator=(const Animal& other)
 
 Animal::~Animal()
 {
-    std::cout << "an Animal object was deleted\n" << std::endl;
+    std::cout << "an Animal object was deleted" << std::endl;
 }
 
 //---------methods---------//
