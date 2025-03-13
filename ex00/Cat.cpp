@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:50:28 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/13 14:50:28 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/13 15:34:38 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Cat::Cat()
 
 Cat::Cat(const Cat& src) : Animal(src)
 {
+	std::cout << "a Cat object was created with copy constructor" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other)

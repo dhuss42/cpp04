@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:50:23 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/13 14:50:24 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/13 15:19:06 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public Animal
 		Cat(const Cat& src);
 		Cat& operator=(const Cat& other);
 		~Cat();
-		void	makeSound() const override;
+		virtual void	makeSound() const;
 };
 
 #endif

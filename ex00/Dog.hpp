@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:50:14 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/13 14:50:15 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/13 15:19:50 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Dog : public Animal
 		Dog(const Dog& src);
 		Dog& operator=(const Dog& other);
 		~Dog();
-		void	makeSound() const override;
+		virtual void	makeSound() const;
 };
 
 #endif

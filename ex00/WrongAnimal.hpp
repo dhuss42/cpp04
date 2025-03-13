@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:49:57 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/13 14:49:57 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/13 15:21:48 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal& src);
 		WrongAnimal& operator=(const WrongAnimal& other);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 		void		makeSound(void) const;
 		std::string getType(void) const;
 };

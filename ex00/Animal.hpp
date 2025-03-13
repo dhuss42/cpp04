@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:50:32 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/13 14:50:32 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/13 15:13:40 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define ANIMAL_HPP
 
 #include <iostream>
+
+/*---------------------------------------------------------------------------*/
+/* virtual keyword makes it possible to override the method in derived class */
+/* Deleting a derived class object when base class has non virtual destructor*/
+/* 		results in undefined behaviour										 */
+/*---------------------------------------------------------------------------*/
 
 class Animal
 {
@@ -25,7 +31,7 @@ class Animal
 		Animal& operator=(const Animal& other);
 		virtual ~Animal();
 		virtual void	makeSound() const;
-		std::string getType() const;
+		std::string		getType() const;
 };
 
 #endif

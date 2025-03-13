@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:50:37 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/13 14:52:02 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/13 15:13:40 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //------canonicals---------//
 
-Animal::Animal()
+Animal::Animal() : type("Animal")
 {
 	std::cout << "an Animal object was created" << std::endl;
 }
