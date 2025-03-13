@@ -1,25 +1,17 @@
 #include "Brain.hpp"
 
-//---------canonicals------------//
-
 Brain::Brain()
 {
-    std::cout << "A Brain object was created!" << std::endl;
+	std::cout << "A Brain was constructed" << std::endl;
 }
 
+// not finished
 Brain::Brain(const Brain& src)
 {
-}
-
-Brain& Brain::operator=(const Brain& other)
-{
-    if (this != &other)
-    {
-    }
-    return (*this);
+	std::cout << "A Brain was constructed using the copy constructer" << std::endl;
 }
 
 Brain::~Brain()
 {
-    std::cout << "A Brain object was deleted!" << std::endl;
+	std::cout << "A Brain was deleted" << std::endl;
 }
