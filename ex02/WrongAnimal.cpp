@@ -14,12 +14,12 @@
 
 //-------canonicals---------//
 
-WrongAnimal::WrongAnimal() : _type("WrongAnimal")
+WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
 	std::cout << "A WrongAnimal object was created!" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& src) : _type(src._type)
+WrongAnimal::WrongAnimal(const WrongAnimal& src) : type(src.type)
 {
 	std::cout << "A WrongAnimal object was created using a copy constructor!" << std::endl;
 }
@@ -27,7 +27,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& src) : _type(src._type)
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 {
 	if (this != &other)
-		this->_type = other._type;
+		this->type = other.type;
 	return (*this);
 }
 
@@ -40,10 +40,10 @@ WrongAnimal::~WrongAnimal()
 
 void	WrongAnimal::makeSound(void) const
 {
-	std::cout << _type << " makes the WrongAnimal Noise" << std::endl;
+	std::cout << type << " makes the WrongAnimal Noise" << std::endl;
 }
 
 std::string	WrongAnimal::getType(void) const
 {
-	return (_type);
+	return (type);
 }

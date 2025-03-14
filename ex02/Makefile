@@ -6,7 +6,7 @@
 #    By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 14:50:06 by dhuss             #+#    #+#              #
-#    Updated: 2025/03/13 14:56:11 by dhuss            ###   ########.fr        #
+#    Updated: 2025/03/13 15:55:43 by dhuss            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,10 @@ CPPFILES = main.cpp\
 	Dog.cpp\
 	Cat.cpp\
 	WrongAnimal.cpp\
-	WrongCat.cpp
+	WrongCat.cpp\
+	Brain.cpp
 OFILES = $(CPPFILES:.cpp=.o)
-NAME = ex00
+NAME = ex02
 
 $(NAME) : $(OFILES)
 	$(CC) $(FLAGS) $(OFILES) -o $(NAME)

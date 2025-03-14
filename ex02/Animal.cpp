@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:50:37 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/13 15:49:13 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/13 15:13:40 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Animal::Animal(const Animal& src) : _type(src._type)
 Animal& Animal::operator=(const Animal& other)
 {
 	if (this != &other)
+	{
 		this->_type = other._type;
+		std::cout << "Animal copy assignment operator called" << std::endl;
+	}
 	return (*this);
 }
 

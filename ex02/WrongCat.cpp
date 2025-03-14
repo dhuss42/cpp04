@@ -14,9 +14,9 @@
 
 //------------Canoncials------------//
 
-WrongCat::WrongCat() : WrongAnimal()
+WrongCat::WrongCat()
 {
-	_type = "WrongCat";
+	type = "WrongCat";
 	std::cout << "A WrongCat object was created!" << std::endl;
 }
 
@@ -41,5 +41,5 @@ WrongCat::~WrongCat()
 
 void	WrongCat::makeSound() const
 {
-	std::cout << _type << " makes the WrongCat Sound" << std::endl;
+	std::cout << type << " makes the WrongCat Sound" << std::endl;
 }

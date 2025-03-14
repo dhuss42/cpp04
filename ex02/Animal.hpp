@@ -16,11 +16,12 @@
 #include <iostream>
 
 /*---------------------------------------------------------------------------*/
-/* virtual keyword makes it possible to override the method in derived class */
-/* Deleting a derived class object when base class has non virtual destructor*/
-/* 		results in undefined behaviour										 */
+/* Animal turns into an abstract class because it contains one pure virtual  */
+/* 		function															 */
+/* -> not possible to make an object from abstract class 					 */
+/* -> if derived classes don't override all pure virtual functions they 	 */
+/* 			become an abstract class themselves								 */
 /*---------------------------------------------------------------------------*/
-
 class Animal
 {
 	protected:
@@ -30,7 +31,7 @@ class Animal
 		Animal(const Animal& src);
 		Animal& operator=(const Animal& other);
 		virtual ~Animal();
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 		std::string		getType() const;
 };
 

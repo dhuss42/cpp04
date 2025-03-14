@@ -15,8 +15,6 @@
 
 #include "Animal.hpp"
 
-// override keyword is used in a derived class to state that the method of the base class is overwritten
-
 class Dog : public Animal
 {
 	private:
