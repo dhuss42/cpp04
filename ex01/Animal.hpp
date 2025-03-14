@@ -24,7 +24,7 @@
 class Animal
 {
 	protected:
-		std::string type;
+		std::string _type;
 	public:
 		Animal();
 		Animal(const Animal& src);

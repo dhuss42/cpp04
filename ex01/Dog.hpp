@@ -14,19 +14,20 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
-
-// override keyword is used in a derived class to state that the method of the base class is overwritten
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
 	private:
-
+		Brain* _brain;
 	public:
 		Dog();
 		Dog(const Dog& src);
 		Dog& operator=(const Dog& other);
 		~Dog();
 		virtual void	makeSound() const;
+		void			setIdea(const std::string& idea, int index);
+		std::string		getIdea(int index) const;
 };
 
 #endif

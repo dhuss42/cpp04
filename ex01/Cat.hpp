@@ -16,16 +16,18 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal, public Brain
+class Cat : public Animal
 {
 	private:
-		Brain* brain;
+		Brain* _brain;
 	public:
 		Cat();
 		Cat(const Cat& src);
 		Cat& operator=(const Cat& other);
 		~Cat();
 		virtual void	makeSound() const;
+		void			setIdea(const std::string& idea, int index);
+		std::string		getIdea(int index) const;
 };
 
 #endif

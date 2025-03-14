@@ -14,12 +14,12 @@
 
 //------canonicals---------//
 
-Animal::Animal() : type("Animal")
+Animal::Animal() : _type("Animal")
 {
 	std::cout << "an Animal object was created" << std::endl;
 }
 
-Animal::Animal(const Animal& src) : type(src.type)
+Animal::Animal(const Animal& src) : _type(src._type)
 {
 	std::cout << "an Animal object was created with copy constructor" << std::endl;
 }
@@ -27,7 +27,10 @@ Animal::Animal(const Animal& src) : type(src.type)
 Animal& Animal::operator=(const Animal& other)
 {
 	if (this != &other)
-		this->type = other.type;
+	{
+		this->_type = other._type;
+		std::cout << "Animal copy assignment operator called" << std::endl;
+	}
 	return (*this);
 }
 
@@ -40,7 +43,7 @@ Animal::~Animal()
 
 std::string Animal::getType(void) const
 {
-	return (type);
+	return (_type);
 }
 
 void Animal::makeSound(void) const

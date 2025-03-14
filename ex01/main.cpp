@@ -27,31 +27,58 @@ int main()
 	j->makeSound();
 	i->makeSound();
 	meta->makeSound();
-
-	// std::cout << "\n\033[34m[----------Animal copy constructor----------]\033[37m" << std::endl;
-	// Animal copy(*meta);
-	// std::cout << "It's an " << copy.getType() << std::endl;
-	// copy.makeSound();
-
-	// std::cout << "\n\033[34m[----------Animal assignment operator----------]\033[37m" << std::endl;
-	// Animal assign;
-	// assign = *meta;
-	// std::cout << "It's an " << assign.getType() << std::endl;
-	// assign.makeSound();
-
-	// std::cout << "\n\033[34m[----------Wrong Animal Tests----------]\033[37m" << std::endl;
-	// const WrongAnimal* meta_wrong = new WrongAnimal();
-	// const WrongAnimal* i_wrong = new WrongCat();
-
-	// std::cout << "It's a " << i_wrong->getType() << " " << std::endl;
-	// i_wrong->makeSound();
-	// meta_wrong->makeSound();
-
-	// std::cout << "\n\033[34m[----------Destructors----------]\033[37m" << std::endl;
-	delete j;
 	delete i;
+	delete j;
 	delete meta;
-	// delete meta_wrong;
-	// delete i_wrong;
+
+	std::cout << "\n\033[34m[----------Animal Array Tests----------]\033[37m" << std::endl;
+	Animal* array[4];
+	for (int i = 0; i < 4; i++)
+	{
+		if (i % 2 == 0)
+			array[i] = new Cat();
+		else
+			array[i] = new Dog();
+	}
+	for (int i = 0; i < 4; i++)
+		delete array[i];
+
+	std::cout << "\n\033[34m[----------Ideas Test----------]\033[37m" << std::endl;
+	Cat kitty;
+
+	kitty.setIdea("sratch people", 3);
+	kitty.setIdea("behave like cat", 101);
+	kitty.setIdea("Fly to mars", -1);
+	std::cout << kitty.getIdea(3) << std::endl;
+	std::cout << kitty.getIdea(-1) << std::endl;
+	std::cout << kitty.getIdea(101) << std::endl;
+	std::cout << kitty.getIdea(0) << std::endl;
+
+	std::cout << "\n\033[34m[----------Cat Copy Constructor Test----------]\033[37m" << std::endl;
+	Cat ogCat;
+
+	ogCat.setIdea("do magic trick", 50);
+	Cat copyCat(ogCat);
+	ogCat.setIdea("play with ball", 49);
+	std::cout  << "\n\033[36m<--ogCat-->\033[37m" << std::endl;
+	std::cout << ogCat.getIdea(50) << std::endl;
+	std::cout << ogCat.getIdea(49) << std::endl;
+	std::cout  << "\n\033[35m<--CopyCat-->\033[37m" << std::endl;
+	std::cout << copyCat.getIdea(50) << std::endl;
+	std::cout << copyCat.getIdea(49) << std::endl;
+
+	std::cout << "\n\033[34m[----------Assignment operator Test----------]\033[37m" << std::endl;
+	Cat assignCat;
+
+	ogCat.setIdea("receive bachelor degree", 99);
+	assignCat = ogCat;
+	std::cout << "\n\033[36m<--ogCat-->\033[37m" << std::endl;
+	std::cout << ogCat.getIdea(99) << std::endl;
+	std::cout << "\n\033[35m<--AssignCat-->\033[37m" << std::endl;
+	std::cout << assignCat.getIdea(99) << std::endl;;
+	std::cout << assignCat.getIdea(50) << std::endl;;
+	std::cout << assignCat.getIdea(49) << std::endl;;
+
+	std::cout << "\n\033[34m[----------Destructors----------]\033[37m" << std::endl;
 	return (0);
 }
