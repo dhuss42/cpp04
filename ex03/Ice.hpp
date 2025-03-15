@@ -9,22 +9,12 @@ class Ice : public AMateria
         
     public:
         Ice();
-        Ice(std::string const& type);
         Ice(const Ice& src);
         Ice& operator=(const Ice& other);
         ~Ice();
 
-        AMateria* clone(); // returns Ice materia
+        AMateria* clone() const; // returns Ice materia
         // virtual void use(ICharacter& target);      
 };
-
-Ice::Ice(/* args */)
-{
-}
-
-Ice::~Ice()
-{
-}
-
 
 #endif

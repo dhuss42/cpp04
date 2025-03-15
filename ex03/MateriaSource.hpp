@@ -2,23 +2,24 @@
 # define MATERIASOURCE_HPP
 
 #include "IMateriaSource.hpp"
+#include "AMateria.hpp"
+
+// needs to be able to learn templates of Materias
 
 class MateriaSource : public IMateriaSource
 {
     private:
-        
+        AMateria* _materias[4];
+        void    cloneMateria();
+        void    deleteMateria();
     public:
         MateriaSource();
+        MateriaSource(const MateriaSource& src);
+        MateriaSource& operator=(const MateriaSource& other);
         ~MateriaSource();
 
-        void learnMateria(AMateria*);
-        // -> copies Materia passed stores it in memory so it can be cloned later
-        // -> Like the Character, the MateriaSource can know at most 4 Materias. They are not necessarily unique.
+        void learnMateria(AMateria* mat);
         AMateria* createMateria(std::string const & type);
-        // -> returns a new Materia
-        // -> a copy of the Materia learned by MateriaSource
-        //      -> type equals the one passed as parameter
-        // -> returns 0 if type is unknown
 };
 
 #endif

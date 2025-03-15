@@ -4,6 +4,9 @@
 // Interface a class that consists of only unimplemented methods. like a template
 
 #include <iostream>
+// #include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

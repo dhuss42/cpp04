@@ -1,14 +1,14 @@
 #ifndef AMATERIA_HPP
-# define AMERTIA_HPP
+# define AMATERIA_HPP
 
 #include <iostream>
+#include "ICharacter.hpp"
 
 class AMateria
 {
     protected:
         std::string _type;
     public:
-        AMateria();
         AMateria(std::string const & type);
         AMateria(const AMateria& src);
         AMateria& operator=(const AMateria& other);
