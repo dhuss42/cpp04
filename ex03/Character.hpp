@@ -11,6 +11,7 @@ class Character : public ICharacter
         AMateria* _inventory[4];
         // inventory of slots 4 Materias
             // empty at construction
+        // clone and delete methods for copy constructor
     public:
         Character();
         Character(std::string name);
