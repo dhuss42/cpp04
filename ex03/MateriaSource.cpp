@@ -14,9 +14,9 @@ MateriaSource::MateriaSource()
 /*--------------------*/
 MateriaSource::MateriaSource(const MateriaSource& src)
 {
-    // for (int i = 0; i < 4; i++)
-        // _materias[i] = ;//
-    // not sure yet
+    for (int i = 0; i < 4; i++)
+        _materias[i] = nullptr;
+    _copyMateria(src);
 }
 
 /*----------------------------*/
@@ -24,25 +24,58 @@ MateriaSource::MateriaSource(const MateriaSource& src)
 /*----------------------------*/
 MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 {
-    // not sure
+    if (this != &other)
+    {
+        _clearMateria();
+        _copyMateria(other);
+    }
     return (*this);
 }
 
+/*----------------------------*/
+/* Destructor                 */
+/*----------------------------*/
 MateriaSource::~MateriaSource()
 {
-    // not sure
+    _clearMateria();
 }
 
 //-----------private methods-------------//
 
-void MateriaSource::cloneMateria()
+/*------------------------------------------------------*/
+/* Function for deep copies for Copy Constructor        */
+/*------------------------------------------------------*/
+void MateriaSource::_copyMateria(const MateriaSource& src)
 {
-    // for copy constructor and assignment
-    // -> deep copies
+    for (int i = 0; i < 4; i++)
+    {
+        if (src._materias[i])
+            _materias[i] = src._materias[i]->clone();
+        else
+            _materias[i] = nullptr;
+    }
+}
+
+/*------------------------------------------------------*/
+/* Function for freeing _materias[] array               */
+/*------------------------------------------------------*/
+void MateriaSource::_clearMateria()
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (_materias[i])
+        {
+            delete _materias[i];
+            _materias[i] = nullptr;
+        }
+    }
 }
 
 //-----------public methods-------------//
 
+/*------------------------------------------------------*/
+/* stores Materia in _materias[i] if valid              */
+/*------------------------------------------------------*/
 void MateriaSource::learnMateria(AMateria* mat)
 {
     if ( !mat)
@@ -61,6 +94,10 @@ void MateriaSource::learnMateria(AMateria* mat)
     }
     std::cout << "No more space to learn new materia" << std::endl;
 }
+
+/*------------------------------------------------------*/
+/* returns learnt  Materia in _materias[i] if valid     */
+/*------------------------------------------------------*/
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     if (type != "ice" && type != "cure")
@@ -68,14 +105,14 @@ AMateria* MateriaSource::createMateria(std::string const & type)
         std::cout << type << " is an invalid type" << std::endl;
         return (0);
     }
-    for (int i = 0; _materias[i]; i++)
+    for (int i = 0; i < 4; i++)
     {
-        if (type == _materias[i]->getType())
+        if (_materias[i] && type == _materias[i]->getType())
         {
             std::cout << type << " created" << std::endl;
             return (_materias[i]->clone());
         }
     }
-    std::cout << type << " not learned" << std::endl;
+    std::cout << type << " not learnt" << std::endl;
     return (0);
 }

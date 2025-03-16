@@ -1,23 +1,34 @@
 #include "AMateria.hpp"
 
+/*--------------------*/
+/* Constructor        */
+/*--------------------*/
 AMateria::AMateria(std::string const & type) : _type(type)
 {
 }
 
-AMateria::AMateria(const AMateria& src)
+/*--------------------*/
+/* Copy Constructor   */
+/*--------------------*/
+AMateria::AMateria(const AMateria& src) : _type(src._type)
 {
-    // not sure yet
 }
 
+/*----------------------------*/
+/* Copy assignment Operator   */
+/*----------------------------*/
 AMateria& AMateria::operator=(const AMateria& other)
 {
-    // not sure yet
+    (void) other;
+    std::cout << "Error: AMateria is of type const" << std::endl;
     return (*this);
 }
 
+/*----------------------------*/
+/* Destructor                 */
+/*----------------------------*/
 AMateria::~AMateria()
 {
-    // not sure yet
 }
 
 std::string const & AMateria::getType() const
@@ -25,8 +36,7 @@ std::string const & AMateria::getType() const
     return (_type);
 }
 
-
-// void AMateria::(ICharacter& target)
-// {
-
-// }
+void AMateria::use(ICharacter& target)
+{
+    std::cout << " * uses an undefined materia on " << target.getName() << " *" << std::endl;
+}

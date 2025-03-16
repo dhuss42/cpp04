@@ -1,29 +1,50 @@
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("Ice")
-{
-    _type = "ice";
-    std::cout << "Ice default constructor" << std::endl;
-}
-
-Ice::Ice(const Ice& src) : AMateria(src)
+/*--------------------*/
+/* Constructor        */
+/*--------------------*/
+Ice::Ice() : AMateria("ice")
 {
 }
 
+/*--------------------*/
+/* Copy Constructor   */
+/*--------------------*/
+Ice::Ice(const Ice& src) : AMateria(src._type)
+{
+}
+
+/*----------------------------*/
+/* Copy assignment Operator   */
+/*----------------------------*/
 Ice& Ice::operator=(const Ice& other)
 {
-    // needs stuff
+    (void) other;
+    std::cout << "Error: Ice is of type const" << std::endl;
     return (*this);
 }
 
+/*----------------------------*/
+/* Destructor                 */
+/*----------------------------*/
 Ice::~Ice()
 {
-    // not sure yet
 }
 
 //------public methods---------//
 
+/*----------------------------*/
+/* overriden clone function   */
+/*----------------------------*/
 AMateria* Ice::clone() const
 {
     return (new Ice( *this ));
+}
+
+/*----------------------------*/
+/* overriden use function     */
+/*----------------------------*/
+void Ice::use(ICharacter& target)
+{
+    std::cout << " * shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

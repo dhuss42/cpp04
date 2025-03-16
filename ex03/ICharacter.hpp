@@ -1,13 +1,15 @@
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-// Interface a class that consists of only unimplemented methods. like a template
-
 #include <iostream>
-// #include "AMateria.hpp"
 
 class AMateria;
 
+/*-----------------------------------------------------*/
+/* Interface                                           */
+/* a class that consists of only unimplemented methods */
+/* like a template                                     */
+/*-----------------------------------------------------*/
 class ICharacter
 {
     public:

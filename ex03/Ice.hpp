@@ -13,8 +13,8 @@ class Ice : public AMateria
         Ice& operator=(const Ice& other);
         ~Ice();
 
-        AMateria* clone() const; // returns Ice materia
-        // virtual void use(ICharacter& target);      
+        AMateria* clone() const;
+        void use(ICharacter& target);      
 };
 
 #endif
