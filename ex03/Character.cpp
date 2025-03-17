@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:18:59 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/17 13:19:00 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/17 15:15:15 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void Character::equip(AMateria* m)
 		if (!_inventory[i])
 		{
 			_inventory[i] = m;
-			std::cout << _name << " equiped " << m->getType() << " in slot " << i << std::endl;
+			std::cout << _name << " equiped " << m->getType() << " in slot: " << i << std::endl;
 			return ;
 		}
 	}
@@ -123,10 +123,10 @@ void Character::unequip(int idx)
 	}
 	if (!_inventory[idx])
 	{
-		std::cout << "No Materias equiped int inventory slot: " << idx << std::endl;
+		std::cout << "No Materias equiped in inventory slot: " << idx << std::endl;
 		return ;
 	}
-	std::cout << _name << " unequiped"  << _inventory[idx]->getType() << std::endl;
+	std::cout << _name << " unequiped " << _inventory[idx]->getType() << std::endl;
 	_inventory[idx] = nullptr;
 }
 
@@ -139,7 +139,7 @@ void Character::use(int idx, ICharacter& target)
 	}
 	if (!_inventory[idx])
 	{
-		std::cout << "No Materias equiped int inventory slot: " << idx << std::endl;
+		std::cout << "No Materias equiped in inventory slot: " << idx << std::endl;
 		return ;
 	}
 	std::cout << _name;

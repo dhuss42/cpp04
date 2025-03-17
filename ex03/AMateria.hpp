@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:19:05 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/17 13:19:19 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/17 13:26:07 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class AMateria
 		AMateria(std::string const & type);
 		AMateria(const AMateria& src);
 		AMateria& operator=(const AMateria& other);
-		~AMateria();
-		std::string const &	getType() const; //Returns the materia type
+		virtual ~AMateria();
+		std::string const &	getType() const;
 
 		virtual AMateria*	clone() const = 0;
 		virtual void 		use(ICharacter& target);
