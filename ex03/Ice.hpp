@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/17 13:20:11 by dhuss             #+#    #+#             */
+/*   Updated: 2025/03/17 13:20:11 by dhuss            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ICE_HPP
 # define ICE_HPP
 
@@ -5,16 +17,16 @@
 
 class Ice : public AMateria
 {
-    private:
-        
-    public:
-        Ice();
-        Ice(const Ice& src);
-        Ice& operator=(const Ice& other);
-        ~Ice();
+	private:
 
-        AMateria* clone() const;
-        void use(ICharacter& target);      
+	public:
+		Ice();
+		Ice(const Ice& src);
+		Ice& operator=(const Ice& other);
+		~Ice();
+
+		AMateria*	clone() const;
+		void		use(ICharacter& target);
 };
 
 #endif
