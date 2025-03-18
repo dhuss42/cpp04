@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:22:40 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/18 14:37:31 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/18 16:01:27 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,10 @@
 	return 0;
 } */
 
+
 int main()
 {
+	std::cout << "\033[34m[----------Subject Main + added unequip----------]\033[37m" << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -130,6 +132,10 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	tmp = me->getAMateria(0);
+	me->unequip(0);
+	delete tmp;
+
 	delete bob;
 	delete me;
 	delete src;

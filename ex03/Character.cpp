@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:18:59 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/18 14:10:11 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/18 15:47:45 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,7 @@ Character& Character::operator=(const Character& other)
 /*------------------------------*/
 Character::~Character()
 {
-	// std::cout << "test" << getName() << std::endl;
 	_clearInv();
-	// for (int i = 0; i < _unequipped.size(); i++)
-	// {
-	// 	if (_unequipped[i])
-	// 		delete (_unequipped[i]);
-	// }
-	// std::cout << "test2" << std::endl;
 }
 
 //--------getters & setters---------//
@@ -66,7 +59,6 @@ std::string const & Character::getName() const
 {
 	return (_name);
 }
-
 
 //--------private methods---------//
 
@@ -89,23 +81,32 @@ void	Character::_copyInv(const Character& src)
 /*------------------------------------------------------*/
 void	Character::_clearInv()
 {
-	// std::cout << "test _clearInv" << getName() << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		// std::cout << "test _clearInv2" << getName() << std::endl;
 		if (_inventory[i])
 		{
-			// std::cout << "test _clearInv3" << getName() << std::endl;
 			delete _inventory[i];
-			// std::cout << "test _clearInv4" << getName() << std::endl;
 			_inventory[i] = nullptr;
 		}
 	}
 }
 
 
+//------getters-------//
+
+/*------------------------------------------------------*/
+/* Function for storing address							*/
+/*------------------------------------------------------*/
+AMateria* Character::getAMateria(int idx)
+{
+	return (_inventory[idx]);
+}
+
 //------public methods-------//
 
+/*------------------------------------------------------*/
+/* equips passed materia in inventory					*/
+/*------------------------------------------------------*/
 void Character::equip(AMateria* m)
 {
 	if (!m)
@@ -125,6 +126,9 @@ void Character::equip(AMateria* m)
 	std::cout << "Inventory is full" << std::endl;
 }
 
+/*------------------------------------------------------*/
+/* unequips materia, freeing occurs in main				*/
+/*------------------------------------------------------*/
 void Character::unequip(int idx)
 {
 	if (idx < 0 || idx > 3)
@@ -141,6 +145,9 @@ void Character::unequip(int idx)
 	_inventory[idx] = nullptr;
 }
 
+/*------------------------------------------------------*/
+/* Uses materia stored at idx on target					*/
+/*------------------------------------------------------*/
 void Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx > 3)

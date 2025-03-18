@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:18:54 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/18 14:20:05 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/18 15:30:15 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
-		// get Materia
+		AMateria* getAMateria(int idx);
 };
 
 #endif
