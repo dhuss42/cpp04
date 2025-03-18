@@ -6,12 +6,12 @@
 #    By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/17 13:22:18 by dhuss             #+#    #+#              #
-#    Updated: 2025/03/17 13:22:18 by dhuss            ###   ########.fr        #
+#    Updated: 2025/03/18 14:04:21 by dhuss            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++17
+CFLAGS = -Wall -Werror -Wextra -std=c++17 -g
 CPPFILES = main.cpp\
 	AMateria.cpp\
 	MateriaSource.cpp\

@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:18:54 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/17 13:19:49 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/18 14:20:05 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include <vector>
 
 class Character : public ICharacter
 {
@@ -24,7 +25,6 @@ class Character : public ICharacter
 		void		_copyInv(const Character& src);
 		void		_clearInv();
 	public:
-		Character();
 		Character(std::string name);
 		Character(const Character& src);
 		Character& operator=(const Character& other);
@@ -34,6 +34,7 @@ class Character : public ICharacter
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		// get Materia
 };
 
 #endif

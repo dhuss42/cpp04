@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:18:59 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/17 15:15:15 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/18 14:10:11 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,14 @@ Character& Character::operator=(const Character& other)
 /*------------------------------*/
 Character::~Character()
 {
+	// std::cout << "test" << getName() << std::endl;
 	_clearInv();
+	// for (int i = 0; i < _unequipped.size(); i++)
+	// {
+	// 	if (_unequipped[i])
+	// 		delete (_unequipped[i]);
+	// }
+	// std::cout << "test2" << std::endl;
 }
 
 //--------getters & setters---------//
@@ -82,11 +89,15 @@ void	Character::_copyInv(const Character& src)
 /*------------------------------------------------------*/
 void	Character::_clearInv()
 {
+	// std::cout << "test _clearInv" << getName() << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
+		// std::cout << "test _clearInv2" << getName() << std::endl;
 		if (_inventory[i])
 		{
+			// std::cout << "test _clearInv3" << getName() << std::endl;
 			delete _inventory[i];
+			// std::cout << "test _clearInv4" << getName() << std::endl;
 			_inventory[i] = nullptr;
 		}
 	}
@@ -116,7 +127,7 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 && idx > 3)
+	if (idx < 0 || idx > 3)
 	{
 		std::cout << "Index is not within valid range" << std::endl;
 		return ;

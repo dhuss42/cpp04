@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:22:14 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/17 13:22:15 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/18 14:31:06 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void MateriaSource::_clearMateria()
 /*------------------------------------------------------*/
 void MateriaSource::learnMateria(AMateria* mat)
 {
-	if ( !mat)
+	if (!mat)
 	{
 		std::cout << "invalid materia" << std::endl;
 		return ;
@@ -105,6 +105,7 @@ void MateriaSource::learnMateria(AMateria* mat)
 		}
 	}
 	std::cout << "No more space to learn new materia" << std::endl;
+	delete mat;
 }
 
 /*------------------------------------------------------*/
