@@ -6,7 +6,7 @@
 /*   By: dhuss <dhuss@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:22:40 by dhuss             #+#    #+#             */
-/*   Updated: 2025/03/18 16:01:27 by dhuss            ###   ########.fr       */
+/*   Updated: 2025/03/19 09:30:23 by dhuss            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-/* int main()
+int main()
 {
 	std::cout << "\033[34m[----------Modified Subject Main----------]\033[37m" << std::endl;
 	IMateriaSource* src = new MateriaSource();
@@ -114,10 +114,10 @@
 	delete tmp;
 
 	return 0;
-} */
+}
 
 
-int main()
+/* int main()
 {
 	std::cout << "\033[34m[----------Subject Main + added unequip----------]\033[37m" << std::endl;
 	IMateriaSource* src = new MateriaSource();
@@ -140,4 +140,4 @@ int main()
 	delete me;
 	delete src;
 	return 0;
-}
+} */
