@@ -23,7 +23,6 @@ This prevented instantiating Animal directly while still allowing derived classe
 
 ---
 ## Bonus
----
 
 ## ex03 – Interface & Recap
 
